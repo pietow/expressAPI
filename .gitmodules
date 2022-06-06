@@ -1,6 +1,3 @@
-[submodule "lintConfig"]
-	path = lintConfig
-	url = git@github.com:pietow/lintConfig.git
 [submodule "eslintPrettier"]
 	path = eslintPrettier
 	url = git@github.com:pietow/eslintPrettier.git
