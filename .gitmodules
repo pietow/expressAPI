@@ -1,0 +1,3 @@
+[submodule "lintConfig"]
+	path = lintConfig
+	url = git@github.com:pietow/lintConfig.git
