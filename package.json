@@ -1,0 +1,11 @@
+{
+  "name": "client_to_do",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "eslint-plugin-react": "^7.29.4"
+  }
+}
