@@ -21,7 +21,7 @@ app.get('/book/:id', (req, res) => {
 app.post('/book', (req, res) => {
     const book = Object.assign({ id: books.length + 1 }, req.body)
     books.push(book)
-    res.send('Got a POST request')
+    res.json(book)
 })
 
 app.put('/book', (req, res) => {
