@@ -7,9 +7,15 @@ const books = require('./techBooks.json') //Load data into memory; To make data 
 
 app.use(express.urlencoded({ extended: true })) //If extended is false, you can not post "nested object"
 
+//SHOW ALL BOOKS
 app.get('/book', (req, res) => {
-    console.log(books.length)
     res.json(books)
+})
+
+//SHOW ONE BOOK
+app.get('/book/:id', (req, res) => {
+    const id = req.params.id
+    res.json(books[id - 1])
 })
 
 app.post('/book', (req, res) => {
