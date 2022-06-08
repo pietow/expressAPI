@@ -3,23 +3,22 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const books = require('./techBooks.json')
+const books = require('./techBooks.json') //Load data into memory; To make data persitent, you usally use a Database e.g. MongoDB
 
 app.get('/', (req, res) => {
-    console.log(books)
-    res.send('Hello World!')
+    res.json(books)
 })
 
 app.post('/', (req, res) => {
     res.send('Got a POST request')
 })
 
-app.put('/user', (req, res) => {
-    res.send('Got a PUT request at /user')
+app.put('/book', (req, res) => {
+    res.send('Got a PUT request at /book')
 })
 
-app.delete('/user', (req, res) => {
-    res.send('Got a DELETE request at /user')
+app.delete('/book', (req, res) => {
+    res.send('Got a DELETE request at /book')
 })
 
 app.listen(port, () => {
