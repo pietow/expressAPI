@@ -47,6 +47,17 @@ app.patch('/book/:id', (req, res) => {
     res.json(books[index])
 })
 
+app.put('/book/:id', (req, res) => {
+    console.log(req.body)
+    const index = books.findIndex((book) => book.id === Number(req.params.id))
+    console.log(index)
+    books[index] = {
+        id: req.params.id,
+        ...req.body,
+    } // PUT: When using PUT, it is assumed that you are sending the complete entity, and that complete entity replaces any existing entity at that URI.
+    res.json(books[index])
+})
+
 app.delete('/book/:id', (req, res) => {
     const index = books.findIndex((book) => book.id === Number(req.params.id))
     const deletedBook = books.splice(index, index === -1 ? 0 : 1) //IF INDEX = -1 DO NOT SPLICE
