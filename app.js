@@ -3,7 +3,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const books = require('./techBooks.json') //Load data into memory; To make data persitent, you usally use a Database e.g. MongoDB
+const books = require('./techBooks.json') //Load data into memory; To make data persistent, you usally use a Database e.g. MongoDB
 
 app.use(express.urlencoded({ extended: true })) //If extended is false, you can not post "nested object"
 
@@ -15,7 +15,8 @@ app.get('/book', (req, res) => {
 //SHOW ONE BOOK
 app.get('/book/:id', (req, res) => {
     const id = req.params.id
-    res.json(books[id - 1])
+    /* console.log(req.query.id) */
+    res.json(books.find((book) => book.id === id))
 })
 
 app.post('/book', (req, res) => {
