@@ -22,7 +22,15 @@ app.get('/book/:id', (req, res) => {
 })
 
 app.post('/book', (req, res) => {
-    const book = Object.assign({ id: books.length + 1 }, req.body)
+    const maxId = books.reduce((acc, cur) => {
+        if (acc.id > cur.id) {
+            return acc.id
+        } else {
+            return cur.id
+        }
+    })
+    console.log(maxId)
+    const book = Object.assign({ id: maxId + 1 }, req.body)
     books.push(book)
     res.json(book)
 })
