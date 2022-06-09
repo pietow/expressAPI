@@ -25,8 +25,12 @@ app.post('/book', (req, res) => {
     res.json(book)
 })
 
-app.put('/book', (req, res) => {
-    res.send('Got a PUT request at /book')
+app.patch('/book/:id', (req, res) => {
+    console.log(req.body)
+    const index = books.findIndex((book) => book.id === Number(req.params.id))
+    console.log(index)
+    books[index] = { ...books[index], ...req.body }
+    res.json(books[index])
 })
 
 app.delete('/book', (req, res) => {
