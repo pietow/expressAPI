@@ -43,8 +43,10 @@ app.patch('/book/:id', (req, res) => {
     res.json(books[index])
 })
 
-app.delete('/book', (req, res) => {
-    res.send('Got a DELETE request at /book')
+app.delete('/book/:id', (req, res) => {
+    const index = books.findIndex((book) => book.id === Number(req.params.id))
+    const deletedBook = books.splice(index, index === -1 ? 0 : 1) //IF INDEX = -1 DO NOT SPLICE
+    res.json(deletedBook)
 })
 
 app.listen(port, () => {
