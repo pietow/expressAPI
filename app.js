@@ -39,7 +39,11 @@ app.patch('/book/:id', (req, res) => {
     console.log(req.body)
     const index = books.findIndex((book) => book.id === Number(req.params.id))
     console.log(index)
-    books[index] = { ...books[index], ...req.body }
+    books[index] = {
+        ...books[index],
+        title: req.body.title,
+        notes: req.body.notes,
+    } // PATCH: SINCE ONLY TWO PROPERTIES ARE INCLUDED
     res.json(books[index])
 })
 
@@ -47,6 +51,12 @@ app.delete('/book/:id', (req, res) => {
     const index = books.findIndex((book) => book.id === Number(req.params.id))
     const deletedBook = books.splice(index, index === -1 ? 0 : 1) //IF INDEX = -1 DO NOT SPLICE
     res.json(deletedBook)
+})
+
+//SHOW with query
+app.get('/', (req, res) => {
+    const book = books.find((book) => book.id === Number(req.query.id))
+    res.json(book)
 })
 
 app.listen(port, () => {
