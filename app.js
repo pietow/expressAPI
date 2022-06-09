@@ -14,9 +14,11 @@ app.get('/book', (req, res) => {
 
 //SHOW ONE BOOK
 app.get('/book/:id', (req, res) => {
-    const id = req.params.id
+    const id = Number(req.params.id)
+    console.log(id)
     /* console.log(req.query.id) */
-    res.json(books.find((book) => book.id === id))
+    const book = books.find((book) => book.id === id)
+    res.json(book)
 })
 
 app.post('/book', (req, res) => {
