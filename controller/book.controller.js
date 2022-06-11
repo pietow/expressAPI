@@ -2,7 +2,7 @@
 
 const express = require('express')
 const router = express.Router()
-const books = require('../techBooks.json') //Load data into memory; To make data persistent, you usally use a Database e.g. MongoDB
+const books = require('../data/techBooks.json') //Load data into memory; To make data persistent, you usally use a Database e.g. MongoDB
 
 //SHOW ALL BOOKS
 router.get('/', (req, res) => {
