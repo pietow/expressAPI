@@ -6,6 +6,7 @@ const books = require('../data/techBooks.json') //Load data into memory; To make
 
 //SHOW ALL BOOKS
 router.get('/', (req, res) => {
+    console.log(req.method)
     res.json(books)
 })
 
