@@ -1,0 +1,33 @@
+[
+		{
+            "id": 1,
+			"namefirst": "Sang",
+			"namelast": "Hephner",
+			"email": "stewardesssbroth@skylarksbeausHookeretrofitting.com",
+			"username": "priviesmessyCannon",
+			"age": "100",
+			"country": "Belarus",
+            "password": "bla"
+		},
+		{
+            "id": 2,
+			"namefirst": "Darin",
+			"namelast": "Esco",
+			"email": "seminarianskennels@sleekercraniums.me",
+			"username": "mechanisms",
+			"age": "84",
+			"country": "Papua New Guinea",
+            "password": "bla2"
+		},
+		{
+            "id": 3,
+			"namefirst": "Enrique",
+			"namelast": "Fortenberry",
+			"email": "preferablycrumbled@pippinstickler.me",
+			"username": "rodsbowelspounds",
+			"age": "75",
+			"country": "Niue",
+            "password": "bla3"
+		}
+]
+
